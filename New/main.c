@@ -1,65 +1,78 @@
 #include <stdio.h>
-#define SIZE 2
+#include <stdlib.h>
+#include <ctype.h>
+#include <string.h>
 
-int scanMatrix(int arr[][SIZE])
+#define SIZES 10
+
+int * evenFirst(int * arr)
 {
-    printf("Fulfil the matrix:\n");
-    for(int j=0;j<SIZE;j++)
-        for(int i=0;i<SIZE;i++)
-        {
-            printf("arr[%d][%d] =", j, i);
-            if (scanf(" %d", &arr[j][i]) != 1) {
-                printf("Invalid input\n");
-                return 0;
-            }
+    int copyy[SIZES]={0},amountofodd=0;
+    for(int i=0;i<SIZES;i++)
+    {
+        copyy[i]=arr[i];
+        if(copyy[i]%2)
+            amountofodd++;
+    }
+    int j=SIZES-amountofodd,index=0;
+    for(int i=0;i<SIZES;i++)
+    {
+        if(copyy[i]%2==0) {
+            arr[index] = copyy[i];
+            index++;
         }
-    return 1;
-}
-int scaleMatrix(int arr[][SIZE])
-{
-    int scale;
-    printf("Enter the scaler value here:");
-    if(scanf("%d",&scale)!=1)
-    {
-        puts("Invalid input.");
-        return 0;
+        else
+        {
+            arr[j] = copyy[i];
+            j++;
+        }
+
     }
-    for (int j = 0; j < SIZE; j++)
-        for (int i = 0; i < SIZE; i++)
-            arr[j][i]*=scale;
-    return 1;
+    return arr;
 }
 
-void printMatrix(int arr[][SIZE])
-{
-    for (int j = 0; j < SIZE; j++)
-    {
-        for (int i = 0; i < SIZE; i++)
-            printf("%d ",arr[j][i]);
-        printf("\n");
-    }
-}
-int main() {
-    int arr[SIZE][SIZE];
-    if(!scanMatrix(&arr[SIZE]))
-        return 1;
-    printMatrix(&arr[SIZE]);
-    scaleMatrix(&arr[SIZE]);
-    printMatrix(&arr[SIZE]);
-    /*to add to matrix,firstly:
-     * we need to initialize second one and fulfil it with scan function i have writen
-     * after that,create new empty matrix
-     * then,we need to create new function with 3 arguments,one of which(newone)will be a matrix of sum
-     * in 2 loops we will write something like this:
-     * arrSum[j][i]==arr1[j][i]+arr[j][i]
-     * that`s it
-    */
 
-    /*Deteminant function isn`t that hard to create
-     * the problem is,that either we have to come up with an algorithm for determinant of a scale N>=3
-     * or we have to do 2 function for N=2 N=3,but other N`s will not be valid for this operation
-     * so I won`t do algorithm nor 2 functions :)
-     *
-     */
-     return 0;
+int main()
+{
+    int arr[SIZES]={1,2,3,4,5,6,7,8,9,10};
+    evenFirst(arr);
+    for(int i=0;i<SIZES;i++)
+        printf("%d ",arr[i]);
+
 }
+
+
+
+
+
+
+//#define SECOND_TASK
+
+#ifdef SECOND_TASK
+
+#define SIZE 26
+
+int main()
+{
+char * arr = (char *)calloc(SIZE,sizeof(arr));
+printf("Enter your string :");
+if(fgets(arr,SIZE,stdin)==NULL)
+{
+    puts("Invalid input.");
+    return 1;
+}
+puts(arr);
+if(strlen(arr)==SIZE-1)
+    while(getchar()!='\n');
+puts("Changing to a b c...");//26
+char j='a';
+for(int i=0;i<SIZE;i++)
+{
+    arr[i]=j;
+    j++;
+}
+puts("Changed to alphabetic");
+puts(arr);
+}
+
+#endif
