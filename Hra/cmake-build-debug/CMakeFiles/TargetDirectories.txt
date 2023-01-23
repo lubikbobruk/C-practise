@@ -1,0 +1,3 @@
+C:/Users/Lubomyr/Desktop/C-practise/Hra/cmake-build-debug/CMakeFiles/Hra.dir
+C:/Users/Lubomyr/Desktop/C-practise/Hra/cmake-build-debug/CMakeFiles/edit_cache.dir
+C:/Users/Lubomyr/Desktop/C-practise/Hra/cmake-build-debug/CMakeFiles/rebuild_cache.dir
