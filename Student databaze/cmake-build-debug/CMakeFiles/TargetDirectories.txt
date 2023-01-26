@@ -1,0 +1,3 @@
+C:/Users/Lubomyr/Desktop/C-practise/Student databaze/cmake-build-debug/CMakeFiles/Student_databaze.dir
+C:/Users/Lubomyr/Desktop/C-practise/Student databaze/cmake-build-debug/CMakeFiles/edit_cache.dir
+C:/Users/Lubomyr/Desktop/C-practise/Student databaze/cmake-build-debug/CMakeFiles/rebuild_cache.dir

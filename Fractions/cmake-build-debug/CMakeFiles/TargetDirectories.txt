@@ -1,0 +1,3 @@
+C:/Users/Lubomyr/Desktop/C-practise/Struct 1/cmake-build-debug/CMakeFiles/Struct_1.dir
+C:/Users/Lubomyr/Desktop/C-practise/Struct 1/cmake-build-debug/CMakeFiles/edit_cache.dir
+C:/Users/Lubomyr/Desktop/C-practise/Struct 1/cmake-build-debug/CMakeFiles/rebuild_cache.dir
